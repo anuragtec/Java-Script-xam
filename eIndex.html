@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="D:\HTML5 CSS3_Exam\CSS\eStyle.css">
+</head>
+
+<body>
+  <div class="Container-fluid ">
+    <h2 class="simple">Simple Expense Manager Project</h2>
+  </div>
+
+  <div class="Container-fluid ">
+
+    <!-- ----------------------------Form start--------------------------- -->
+    <form id="formStyle" name="myform" onsubmit=" return valid()">
+      <div class="row">
+
+        <div class="col-lg-6">
+          <h4 class="sspl">Add a new item</h4>
+          <!-- ----------------------------- Type (Cash/ Card)--------------------- -->
+          <div class=" form-group d-flex typeSection mt-4 ">
+            <label>Type:</label>
+            <select name="Vtype" id="payType">
+              <option value="card">Card</option>
+              <option value="cash">Cash</option>
+              <option value="other">Other</option>
+            </select>
+            <p id="typeError" class="text-danger"> </p>
+          </div>
+          <!-- ----------------------------- Name --------------------------------- -->
+          <div class="form-group d-flex nameSection ">
+            <label class="">Name:</label>
+            <input type="text" name="Vname" placeholder="What did you spend on" id="reasonName">
+            <p id="reasonError" class="text-danger"></p>
+          </div>
+          <!-- ----------------------------- Currency ----------------------------- -->
+          <div class=" form-group d-flex currencySection  ">
+            <label>Currency:</label>
+            <select name="Vcurency" class="wSpace" id="curren">
+              <option value="usd">USD</option>
+              <option value="inr">INR</option>
+            </select>
+            <p id="currencyError" class="text-danger"> </p>
+          </div>
+
+        </div>
+        <!-- ----------------------------- Add friend button---------------------- -->
+        <div class="col-lg-6 ">
+          <h4 class="mb-4 spl">Add friend
+            <button class="add-friend-button">+</button></h4>
+
+          <!-- ----------------------------- Add friend----------------------------- -->
+          <div class="form-group d-flex ">
+            <label>Add Friend:</label>
+            <select multiple class="form-control-select " name="Vfriend" id="friend">
+              <option>Adam</option>
+              <option>Eve</option>
+              <option>Jack</option>
+              <option>Robert</option>
+              <option>Christano</option>
+              <option>Gorge</option>
+            </select>
+            <p id="friendError" class="text-danger"> </p>
+          </div>
+          <!-- ----------------------------- Date ----------------------------- -->
+          <div class="form-group d-flex">
+            <label>Date:</label>
+             <input name="Vdate" type="date" id="dateVal">
+             <p id="dateError" class="text-danger"> </p>
+          </div>
+          <!-- ----------------------------- Amount ----------------------------- -->
+          <div class="form-group d-flex">
+            <label>Amount:</label>
+
+            <input type="number" name="Vamount" placeholder="How Much" min="0" max="10000" step="1" value=""
+              id="amount" />
+            <p id="amountError" class="text-danger"> </p>
+
+          </div>
+        </div>
+      </div>
+      <!-- ----------------------------- Add Expense button----------------- -->
+
+      <div class="text-center">
+        <button id="addButton" type="button" class="btn btn-primary pt-2 pb-2 " onclick="valid();">Add a new expense </button>
+      </div>
+
+    </form>
+    <!-- ----------------------------- Table ----------------------------- -->
+
+
+
+    <!-- ----------------------------- Table ----------------------------- -->
+    <div class="table-responsive ">
+      <table id="tableSelect" class="table thColor">
+
+        <div class="boxfil">
+            <span class="spanSpace">Filter by friend</span>
+            <select id="" class="heightFix height">
+              <option class="fontfix" value="">Adam</option>
+              <option class="fontfix" value="">Eve</option>
+              <option class="fontfix" value="">Jack</option>
+            </select>
+
+            <span class="spanSpace sideFix">Currency</span>
+            <select id="" class="heightFix ">
+              <option class="fontfix" value="">USD</option>
+              <option class="fontfix" value="">INR</option>
+            </select>
+        </div>
+        <!-- <thead> -->
+        <tr>
+          <th class="thColor">Type</th>
+          <th class="thColor">Name</th>
+          <th class="thColor">Friends</th>
+          <th class="thColor">Date</th>
+          <th class="thColor">Amount</th>
+          <th class="thColor">Edit</th>
+          <th class="thColor">Delete</th>
+        </tr>
+        <!-- </thead> -->
+        <!-- <tbody> -->
+        <tr>
+          <td colspan="9" class=" bg-light">
+            <!-- <span > Your data will show here</span> -->
+          </td>
+        </tr>
+        <!-- </tbody> -->
+      </table>
+    </div>
+  </div>
+
+
+  </div>
+
+
+  <script src="../JS/eMyapp.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
